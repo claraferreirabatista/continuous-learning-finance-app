@@ -2,9 +2,36 @@
   <img alt="finance-app" title="finance-app" src="./github/logo-light.png" width="220px" />
 </h1>
 
+## Instalação e uso
+
+```bash
+# Abra um terminal e copie este repositório com o comando
+git clone https://github.com/claraferreirabatista/continuous-learning-finance-app.git
+# ou use a opção de download.
+
+# Instale as dependências
+yarn install ou npm install
+
+# Rode a aplicação
+yarn start ou npm start
+```
+
+<br>
+
+
 ## 🚀 Tecnologias, Hooks e Bibliotecas
 
-Projeto desenvolvido com as seguintes tecnologias:
+Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
+
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Styled Components](https://styled-components.com/)
+- [MirageJS](https://miragejs.com/)
+- [Axios](https://github.com/axios/axios)
+- [Polished](https://polished.js.org/)
+
+<br>
+
 
 - ReactJS
 - TypeScript
@@ -17,4 +44,7 @@ Projeto desenvolvido com as seguintes tecnologias:
 - React Modal (biblioteca que renderiza o conteúdo de seu filho sobre um componente backdrop e fornece muitos recursos relacionados a interação destes dois)
 - Polished (biblioteca que possui funções otimizadas de estilos para usar no JavaScript, como darken e transparentize)
 
+
+[![Linkedin Badge](https://img.shields.io/badge/-Clara%20Ferreira-ff512f?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/clara-ferreira-batista/)](https://www.linkedin.com/in/clara-ferreira-batista/) 
+[![Gmail Badge](https://img.shields.io/badge/-clarabatista@alunos.utfpr.edu.br-ff512f?style=flat-square&logo=Gmail&logoColor=white&link=mailto:clarabatista@alunos.utfpr.edu.br)](mailto:clarabatista@alunos.utfpr.edu.br)
 
