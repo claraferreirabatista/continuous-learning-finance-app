@@ -38,6 +38,6 @@ Os hooks utilizados:
 - Context API (compartilhamento de estado entre vários componentes da aplicação, utiliza o hook useContext())
 <br>
 
-[![Linkedin Badge](https://img.shields.io/badge/-Clara%20Ferreira-ff512f?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/clara-ferreira-batista/)](https://www.linkedin.com/in/clara-ferreira-batista/) 
-[![Gmail Badge](https://img.shields.io/badge/-clarabatista@alunos.utfpr.edu.br-ff512f?style=flat-square&logo=Gmail&logoColor=white&link=mailto:clarabatista@alunos.utfpr.edu.br)](mailto:clarabatista@alunos.utfpr.edu.br)
+[![Linkedin Badge](https://img.shields.io/badge/-Clara%20Ferreira-ff512f?style=flat-square&logo=Linkedin&logoColor=white&color=blue&link=https://www.linkedin.com/in/clara-ferreira-batista/)](https://www.linkedin.com/in/clara-ferreira-batista/) 
+[![Gmail Badge](https://img.shields.io/badge/-clarabatista@alunos.utfpr.edu.br-ff512f?style=flat-square&logo=Gmail&logoColor=red&color=white&link=mailto:clarabatista@alunos.utfpr.edu.br)](mailto:clarabatista@alunos.utfpr.edu.br)
 
