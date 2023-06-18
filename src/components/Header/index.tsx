@@ -1,12 +1,11 @@
-import logoDark from "../../assets/logoDark.png";
-
+import logo from '../../assets/logoLight.png';
 import { Container, Content } from './styles';
 
 export function Header() {
   return (
     <Container>
       <Content>
-        <img src={logoDark} alt="dt money" />
+        <img src={logo} alt="dt money" />
         <button type="button">
           Nova transação
         </button>
