@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="finance-app" title="finance-app" src="./github/logo.png" width="220px" />
+  <img alt="finance-app" title="finance-app" src="./github/logo3.png" width="220px" />
 </h1>
 
 ## 🚀 Tecnologias, Hooks e Bibliotecas
