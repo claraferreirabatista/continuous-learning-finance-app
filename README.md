@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="dtmoney" title="dtmoney" src="./.github/logo.svg" width="220px" />
+  <img alt="finance-app" title="finance-app" src="./github/logo.svg" width="220px" />
 </h1>
 
 ## 🚀 Tecnologias, Hooks e Bibliotecas
@@ -17,7 +17,4 @@ Projeto desenvolvido com as seguintes tecnologias:
 - React Modal (biblioteca que renderiza o conteúdo de seu filho sobre um componente backdrop e fornece muitos recursos relacionados a interação destes dois)
 - Polished (biblioteca que possui funções otimizadas de estilos para usar no JavaScript, como darken e transparentize)
 
-## 💻 Projeto
-
- Foi desenvolvida durante as aulas do Chapter II da trilha de ReactJS do Bootcamp Ignite da Rocketseat, e nela é possível cadastrar e excluir transações e ver o saldo de entrada e saída 💰
 
