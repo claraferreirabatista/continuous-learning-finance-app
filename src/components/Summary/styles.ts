@@ -27,7 +27,7 @@ export const Container = styled.div`
     }
 
     &.total {
-      background: #3CB371;
+      background: var(--green);
       color: #FFF;
     }
   }

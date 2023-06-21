@@ -4,10 +4,10 @@ export const GlobalStyle = createGlobalStyle`
   :root {
     --background: #f0f2f5;
     --red: #e52e4d;
-    --blue: #5429cc;
-    --green: #33cc95;
+    --blue: #008080;
+    --green: #3CB371;
     
-    --blue-light: #6933ff;
+    --blue-light: #008B8B;
 
     --text-title: #363f5f;
     --text-body: #969cb3;
@@ -78,7 +78,7 @@ export const GlobalStyle = createGlobalStyle`
     position: relative;
     border-radius: 0.24rem;
   }
-  
+
   .react-modal-close {
     position: absolute;
     right: 1.5rem;
