@@ -3,7 +3,9 @@ import { Container } from "../TransactionsTable/styles";
 import { api } from "../../services/api";
 
 export function TransactionsTable() {
-  useEffect(() => {
+
+
+useEffect(() => {
 api.get("transactions")
 .then((response) => {
     console.log(response.data);
