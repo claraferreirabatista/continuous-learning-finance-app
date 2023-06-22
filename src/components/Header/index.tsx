@@ -1,6 +1,7 @@
 import logo from "../../assets/logoLight.png";
 import { Container, Content } from "./styles";
 
+
 interface HeaderProps {
   onOpenNewTransactionModal: () => void;
 }

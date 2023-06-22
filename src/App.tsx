@@ -6,7 +6,7 @@ import { useState } from "react";
 
 import { GlobalStyle } from "./styles/global";
 
-Modal.setAppElement("root");
+Modal.setAppElement('#root');
 
 function App() {
   const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] =
