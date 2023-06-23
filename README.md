@@ -1,6 +1,18 @@
+# Finance App
+
 <h1 align="center">
   <img alt="finance-app" title="finance-app" src="./src/assets/logoLight.png" width="220px" />
 </h1>
+
+**Finance App** é uma página de controle financeiro que permite aos usuários visualizar seus gastos e ganhos pessoais, classificá-los por categoria, data e valor, bem como adicionar novos registros e acompanhar seu saldo atual e total de ganhos em um determinado mês.
+
+
+## Funcionalidades
+
+- Visualizar controle de gastos pessoais, incluindo ganhos e despesas
+- Classificar os registros por categoria, data e valor
+- Inserir novos registros de gastos e ganhos
+- Verificar saldo atual
 
 ## Instalação e uso
 
@@ -14,6 +26,10 @@ yarn install ou npm install
 
 # Rode a aplicação
 yarn start ou npm start
+
+# Acesse a aplicação em seu navegador:
+ `http://localhost:3000`
+
 ```
 
 <br>
@@ -38,6 +54,25 @@ Os hooks utilizados:
 - Context API (compartilhamento de estado entre vários componentes da aplicação, utiliza o hook useContext())
 <br>
 
+## Contribuição
+
+Contribuições são bem-vindas! Se você quiser colaborar com o projeto, siga as etapas abaixo:
+
+1. Fork o repositório
+2. Crie uma branch para a sua feature: `git checkout -b minha-feature`
+3. Faça as alterações necessárias e faça commit das mesmas: `git commit -m 'Implementação da minha feature'`
+4. Push para a branch: `git push origin minha-feature`
+5. Envie um Pull Request
+
+Certifique-se de seguir as boas práticas de desenvolvimento e fornecer uma descrição clara do seu Pull Request.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](https://opensource.org/licenses/MIT).
+
+
 [![Linkedin Badge](https://img.shields.io/badge/-Clara%20Ferreira-ff512f?style=flat-square&logo=Linkedin&logoColor=white&color=blue&link=https://www.linkedin.com/in/clara-ferreira-batista/)](https://www.linkedin.com/in/clara-ferreira-batista/) 
 [![Gmail Badge](https://img.shields.io/badge/-Email-ff512f?style=flat-square&logo=Gmail&logoColor=red&color=white&link=mailto:clarabatista@alunos.utfpr.edu.br)](mailto:clarabatista@alunos.utfpr.edu.br)
+
+
 
