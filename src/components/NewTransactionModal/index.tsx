@@ -1,65 +1,40 @@
-import { FormEvent, useState } from "react";
-import Modal from "react-modal";
-import { Container, TransactionTypeContainer, RadioBox } from "./styles";
-import { useTransactions } from "../../hooks/useTransactions";
+import { FormEvent, useState } from 'react';
+import Modal from 'react-modal';
+import { Container, TransactionTypeContainer, RadioBox } from './styles';
+import { useTransactions } from '../../hooks/useTransactions';
 
-import incomeImg from "../../assets/income.svg";
-import outcomeImg from "../../assets/outcome.svg";
-import closeImg from "../../assets/close.svg";
+import incomeImg from '../../assets/income.svg'
+import outcomeImg from '../../assets/outcome.svg'
+import closeImg from '../../assets/close.svg';
 
 interface NewTransactionModalProps {
   isOpen: boolean;
   onRequestClose: () => void;
 }
 
-interface FormData {
-  title: string;
-  amount: number;
-  type: "deposit" | "withdraw";
-  category: string;
-}
-
-export function NewTransactionModal({
-  isOpen,
-  onRequestClose,
-}: NewTransactionModalProps) {
+export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionModalProps) {
   const { createTransaction } = useTransactions();
-  const [formData, setFormData] = useState<FormData>({
-    title: "",
-    amount: 0,
-    type: "deposit",
-    category: "",
-  });
+
+  const [title, setTitle] = useState('');
+  const [amount, setAmount] = useState(0);
+  const [type, setType] = useState('deposit');
+  const [category, setCategory] = useState('');
 
   async function handleCreateNewTransaction(event: FormEvent) {
     event.preventDefault();
 
-    await createTransaction(formData);
-
-    setFormData({
-      title: "",
-      amount: 0,
-      type: "deposit",
-      category: "",
+    await createTransaction({
+      title,
+      amount,
+      category,
+      type,
     });
 
+    setTitle('');
+    setAmount(0);
+    setCategory('');
+    setType('deposit');
     onRequestClose();
-  }
-
-  function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
-    const { name, value } = event.target;
-
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  }
-
-  function handleTypeChange(type: "deposit" | "withdraw") {
-    setFormData((prevState) => ({
-      ...prevState,
-      type,
-    }));
   }
 
   return (
@@ -82,24 +57,22 @@ export function NewTransactionModal({
 
         <input
           placeholder="Título"
-          name="title"
-          value={formData.title}
-          onChange={handleInputChange}
+          value={title}
+          onChange={event => setTitle(event.target.value)}
         />
 
         <input
           type="number"
           placeholder="Valor"
-          name="amount"
-          value={formData.amount}
-          onChange={handleInputChange}
+          value={amount}
+          onChange={event => setAmount(Number(event.target.value))}
         />
 
         <TransactionTypeContainer>
           <RadioBox
             type="button"
-            onClick={() => handleTypeChange("deposit")}
-            isActive={formData.type === "deposit"}
+            onClick={() => { setType('deposit') }}
+            isActive={type === 'deposit'}
             activeColor="green"
           >
             <img src={incomeImg} alt="Entrada" />
@@ -108,8 +81,8 @@ export function NewTransactionModal({
 
           <RadioBox
             type="button"
-            onClick={() => handleTypeChange("withdraw")}
-            isActive={formData.type === "withdraw"}
+            onClick={() => { setType('withdraw') }}
+            isActive={type === 'withdraw'}
             activeColor="red"
           >
             <img src={outcomeImg} alt="Saída" />
@@ -119,13 +92,15 @@ export function NewTransactionModal({
 
         <input
           placeholder="Categoria"
-          name="category"
-          value={formData.category}
-          onChange={handleInputChange}
+          value={category}
+          onChange={event => setCategory(event.target.value)}
         />
 
-        <button type="submit">Cadastrar</button>
+        <button type="submit">
+          Cadastrar
+        </button>
+
       </Container>
     </Modal>
-  );
+  )
 }
