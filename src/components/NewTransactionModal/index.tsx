@@ -12,32 +12,54 @@ interface NewTransactionModalProps {
   onRequestClose: () => void;
 }
 
+interface FormData {
+  title: string;
+  amount: number;
+  type: "deposit" | "withdraw";
+  category: string;
+}
+
 export function NewTransactionModal({
   isOpen,
   onRequestClose,
 }: NewTransactionModalProps) {
   const { createTransaction } = useTransactions();
-
-  const [title, setTitle] = useState("");
-  const [amount, setAmount] = useState(0);
-  const [type, setType] = useState("deposit");
-  const [category, setCategory] = useState("");
+  const [formData, setFormData] = useState<FormData>({
+    title: "",
+    amount: 0,
+    type: "deposit",
+    category: "",
+  });
 
   async function handleCreateNewTransaction(event: FormEvent) {
     event.preventDefault();
 
-    await createTransaction({
-      title,
-      amount,
-      category,
-      type,
+    await createTransaction(formData);
+
+    setFormData({
+      title: "",
+      amount: 0,
+      type: "deposit",
+      category: "",
     });
 
-    setTitle("");
-    setAmount(0);
-    setCategory("");
-    setType("deposit");
     onRequestClose();
+  }
+
+  function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const { name, value } = event.target;
+
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  }
+
+  function handleTypeChange(type: "deposit" | "withdraw") {
+    setFormData((prevState) => ({
+      ...prevState,
+      type,
+    }));
   }
 
   return (
@@ -60,24 +82,24 @@ export function NewTransactionModal({
 
         <input
           placeholder="Título"
-          value={title}
-          onChange={(event) => setTitle(event.target.value)}
+          name="title"
+          value={formData.title}
+          onChange={handleInputChange}
         />
 
         <input
           type="number"
           placeholder="Valor"
-          value={amount}
-          onChange={(event) => setAmount(Number(event.target.value))}
+          name="amount"
+          value={formData.amount}
+          onChange={handleInputChange}
         />
 
         <TransactionTypeContainer>
           <RadioBox
             type="button"
-            onClick={() => {
-              setType("deposit");
-            }}
-            isActive={type === "deposit"}
+            onClick={() => handleTypeChange("deposit")}
+            isActive={formData.type === "deposit"}
             activeColor="green"
           >
             <img src={incomeImg} alt="Entrada" />
@@ -86,10 +108,8 @@ export function NewTransactionModal({
 
           <RadioBox
             type="button"
-            onClick={() => {
-              setType("withdraw");
-            }}
-            isActive={type === "withdraw"}
+            onClick={() => handleTypeChange("withdraw")}
+            isActive={formData.type === "withdraw"}
             activeColor="red"
           >
             <img src={outcomeImg} alt="Saída" />
@@ -99,8 +119,9 @@ export function NewTransactionModal({
 
         <input
           placeholder="Categoria"
-          value={category}
-          onChange={(event) => setCategory(event.target.value)}
+          name="category"
+          value={formData.category}
+          onChange={handleInputChange}
         />
 
         <button type="submit">Cadastrar</button>
