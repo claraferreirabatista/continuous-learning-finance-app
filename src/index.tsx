@@ -1,46 +1,53 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { createServer, Model } from 'miragejs';
-
+import App from './App';
 
 createServer({
-  routes() {
-    this.namespace = "api";
-    this.get("/transactions", () => [
-      {
-        id: 1,
-        title: 'Freelance de website',
-        amount: 100,
-        type: "deposit",
-        category: "dev",
-        date: new Date(),
-      },
-      {
-        id: 2,
-        title: "Shopping",
-        amount: 200,
-        type: "withdraw",
-        category: "clothings",
-        date: new Date(),
-      },
-      {
-        id: 3,
-        title: "Shopping",
-        amount: 300,
-        type: "withdraw",
-        category: "shoes",
-        date: new Date(),
-      },
-    ]);
+  models: {
+    transaction: Model,
   },
-});
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
-root.render(
+  seeds(server) {
+    server.db.loadData({
+      transactions: [
+        {
+          id: 1,
+          title: 'Google',
+          type: 'deposit',
+          category: 'Dev',
+          amount: 27000,
+          createdAt: new Date('2023-06-21 09:00:00'),
+        },
+        {
+          id: 2,
+          title: 'PS5',
+          type: 'withdraw',
+          category: 'Game',
+          amount: 5500,
+          createdAt: new Date('2023-06-27 11:00:00'),
+        }
+      ]
+    })
+  },
+
+  routes() {
+    this.namespace = 'api';
+
+    this.get('/transactions', () => {
+      return this.schema.all('transaction');
+    })
+
+    this.post('/transactions', (schema, request) => {
+      const data = JSON.parse(request.requestBody);
+      return schema.create('transaction', data);
+    })
+  }
+})
+
+ReactDOM.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
