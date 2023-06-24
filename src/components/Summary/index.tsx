@@ -51,7 +51,7 @@ export function Summary() {
           }).format(summary.withdraws)}
         </strong>
       </div>
-      <div className="highlight-background">
+      <div className="total">
         <header>
           <p>Total</p>
           <img src={totalImg} alt="Total" />
