@@ -1,10 +1,12 @@
-# [Finance App] (https://finance-app-ruby.vercel.app/)
+# Finance App
 
 <h1 align="center">
   <img alt="finance-app" title="finance-app" src="./src/assets/logoLight.png" width="220px" />
 </h1>
 
 [Link do deploy](https://finance-app-ruby.vercel.app/)
+
+
 **Finance App** é uma página de controle financeiro que permite aos usuários visualizar seus gastos e ganhos pessoais, classificá-los por categoria, data e valor, bem como adicionar novos registros e acompanhar seu saldo atual e total de ganhos em um determinado mês.
 
 
